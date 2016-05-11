@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/bajr/bajrFS/dev/LaTeX/CAT Application'
+let g:netrw_dirhist_2='/home/bajr/bajrFS/dev/scratch'
+let g:netrw_dirhist_3='/home/bajr/bajrFS/uni/CS410_LLP/portfolio/porktest'
+let g:netrw_dirhist_4='/home/bajr/bajrFS/uni/CS350/project/rasmbj-ttt'
+let g:netrw_dirhist_5='/home/bajr/.gconf'
