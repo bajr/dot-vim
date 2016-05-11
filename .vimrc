@@ -38,6 +38,10 @@ augroup filetype
 augroup END
 au Syntax jflex    so ~/.vim/syntax/jflex.vim
 
+" Stop inserting placeholders in my LaTeX files
 let g:Imap_UsePlaceHolders = 0
 
 call pathogen#infect()
+
+" Delete .vim/netrwhist, it's trying to keep track of changes in .vim/
+au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif 
