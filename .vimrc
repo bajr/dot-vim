@@ -1,35 +1,67 @@
-" 
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible
+endif
+
+" Required:
+set runtimepath^=~/.vim/bundle/neobundle.vim/
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+  " Let NeoBundle manage NeoBundle
+  NeoBundleFetch 'Shougo/neobundle.vim'
+
+  " My Bundles here:
+  " Refer to |:NeoBundle-examples|.
+  " Note: You don't set neobundle setting in .gvimrc!
+
+  NeoBundle 'dhruvasagar/vim-table-mode'
+
+call neobundle#end()
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
 filetype indent plugin on
 syntax on
 
-" Choose a random color scheme
 colorscheme random
 
-" File format: Unix, enforces \n line endings
 set ff=unix
-
-" Choose character set
 set encoding=utf-8
 
-" Length of tabs
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set softtabstop=2
-set number
 set backspace=indent,eol,start
-set list listchars=tab:»\ ,trail:.,extends:>,precedes:<
-set ignorecase
-set smartcase
-set nostartofline
-set autoindent
-set ruler
-set laststatus=2
 set confirm
-set shellslash
+
+set autoindent
+set expandtab
+set smartindent
+set softtabstop=2
+set tabstop=2
+
 set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
+set hidden
+set history=1000
 set iskeyword+=:
+set ignorecase
+set laststatus=2
+set list listchars=tab:»\ ,trail:.,extends:>,precedes:<
+set noro
+set nostartofline
+set number
+set ruler
+set shellslash
+set shiftwidth=2
+set smartcase
+set title
+set visualbell
+set wildmenu
+set wildmode=list:longest
+
+let g:tex_flavor='latex'
 
 vnoremap // y/<C-R>"<CR>
 
@@ -45,3 +77,4 @@ call pathogen#infect()
 
 " Delete .vim/netrwhist, it's trying to keep track of changes in .vim/
 au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif 
+
