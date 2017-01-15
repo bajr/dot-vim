@@ -1,4 +1,8 @@
 " Note: Skip initialization for vim-tiny or vim-small.
+" To install NeoBundle:
+"   curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
+"   sh ./install.sh
+
 if 0 | endif
 
 if &compatible
