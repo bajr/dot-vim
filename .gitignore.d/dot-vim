@@ -2,4 +2,4 @@
 !/.vim
 !/.vim/*
 !/.vimrc
-!/.gitignore.d/vim
+!/.gitignore.d/dot-vim
