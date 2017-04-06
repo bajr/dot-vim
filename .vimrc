@@ -14,14 +14,14 @@ set runtimepath^=~/.vim/bundle/neobundle.vim/
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-  " Let NeoBundle manage NeoBundle
-  NeoBundleFetch 'Shougo/neobundle.vim'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-  " My Bundles here:
-  " Refer to |:NeoBundle-examples|.
-  " Note: You don't set neobundle setting in .gvimrc!
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 
-  NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'dhruvasagar/vim-table-mode'
 
 call neobundle#end()
 
@@ -33,6 +33,7 @@ filetype indent plugin on
 syntax on
 
 colorscheme random
+set t_Co=256
 
 set ff=unix
 set encoding=utf-8
@@ -78,7 +79,4 @@ au Syntax jflex    so ~/.vim/syntax/jflex.vim
 let g:Imap_UsePlaceHolders = 0
 
 call pathogen#infect()
-
-" Delete .vim/netrwhist, it's trying to keep track of changes in .vim/
-au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif 
 
