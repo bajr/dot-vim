@@ -1,5 +1,6 @@
 *
 !/.vim
 !/.vim/*
+!/.vim/plugin/setcolors.vim
 !/.vimrc
 !/.gitignore.d/dot-vim
