@@ -8,8 +8,8 @@
 " Define function once only
 if !exists("*s:LoadRandomColorScheme")
   function s:LoadRandomColorScheme()
-    let s:self            = globpath(&runtimepath, 'colors/random.vim')
-    let s:color_file_list = globpath(&runtimepath, 'colors/*.vim'     )
+    let s:self            = globpath('$HOME/.vim', 'colors/random.vim')
+    let s:color_file_list = globpath('$HOME/.vim', 'colors/*.vim'     )
     let s:self            = substitute(s:self           , '\'          , '/', 'g')
     let s:color_file_list = substitute(s:color_file_list, '\'          , '/', 'g')
     let s:color_file_list = substitute(s:color_file_list, s:self . "\n", '' , 'g')
@@ -24,13 +24,13 @@ if !exists("*s:LoadRandomColorScheme")
           let s:color_file_list = substitute(s:color_file_list, '^\([^,]\+\),\(.*\)$', '\2,\1', '')
           let s:loop            = s:loop + 1
         endwhile
-        
+
         let s:color_file = matchstr(s:color_file_list, '^[^,]\+')
         execute "source" s:color_file
         unlet! s:color_file
-        
-        unlet! s:loop 
-        unlet! s:rnd 
+
+        unlet! s:loop
+        unlet! s:rnd
       endif
     endif
 

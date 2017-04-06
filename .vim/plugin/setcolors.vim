@@ -16,7 +16,8 @@ if v:version < 700 || exists('loaded_setcolors') || &cp
 endif
 
 let loaded_setcolors = 1
-let paths = split(globpath(&runtimepath, 'colors/*.vim'), '\n')
+"let paths = split(globpath(&runtimepath, 'colors/*.vim'), '\n')
+let paths = split(globpath('$HOME/.vim', 'colors/*.vim'), '\n')
 let s:mycolors = map(paths, 'fnamemodify(v:val, ":t:r")')
 
 " Set list of color scheme names that we will use, except
@@ -32,18 +33,16 @@ function! s:SetColors(args)
   elseif a:args == 'all'
     let paths = split(globpath(&runtimepath, 'colors/*.vim'), '\n')
     let s:mycolors = map(paths, 'fnamemodify(v:val, ":t:r")')
-    echo 'List of colors set from all installed color schemes'
-  elseif a:args == 'my'
-    let c1 = 'default elflord peachpuff desert256 breeze morning'
-    let c2 = 'darkblue gothic aqua earth black_angus relaxedgreen'
-    let c3 = 'darkblack freya motus impact less chocolateliquor'
-    let s:mycolors = split(c1.' '.c2.' '.c3)
-    echo 'List of colors set from built-in names'
+  elseif a:args == 'mine'
+    let paths = split(globpath('$HOME/.vim', 'colors/*.vim'), '\n')
+    let s:mycolors = map(paths, 'fnamemodify(v:val, ":t:r")')
+  elseif a:args == 'default'
+    let paths = split(globpath('$VIMRUNTIME', 'colors/*.vim'), '\n')
+    let s:mycolors = map(paths, 'fnamemodify(v:val, ":t:r")')
   elseif a:args == 'now'
     call s:HourColor()
   else
-    let s:mycolors = split(a:args)
-    echo 'List of colors set from argument (space-separated names)'
+    echo 'Unrecognized list'
   endif
 endfunction
 

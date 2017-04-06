@@ -57,7 +57,7 @@ set laststatus=2 " Always show status line
 set title
 "set titlelen= titlestring=
 set number " Show row numbers
-set ruler rulerformat=c:%-.9(%c%V%)\ \-\ r:%-(%-.6(%l%)/%-.6(%L%)%)
+set ruler rulerformat=c:%-.9(%c%V%)\ r:%-(%-.6(%l%)/%-.6(%L%)%)
 " set statusline=
 
 "** Shelling Out **"
