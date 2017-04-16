@@ -1,6 +1,9 @@
 " Bradley Rasmussen 2017
 " A hacky but functional vim config.
 " Dependencies: neobundle, pathogen, my git repo
+" Todo: http://vimdoc.sourceforge.net/htmldoc/options.html#'statusline'
+" http://got-ravings.blogspot.com/search/label/statuslines
+" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 
 " Skip initialization for vim-tiny or vim-small.
 if 0 | endif
@@ -38,7 +41,6 @@ set encoding=utf-8
 
 "** Indentation **"
 set autoindent expandtab smartindent softtabstop=2 tabstop=2 shiftwidth=2
-" Todo: Insert some logic to handle utf-8
 set list listchars=tab:»\ ,trail:.,extends:>,precedes:<,nbsp:_ " Enable list mode and set invisible characters
 
 "** Searching & History **"
