@@ -53,6 +53,7 @@ vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 set backspace=indent,eol,start
 set confirm
 set wildmenu wildmode=list:longest
+set colorcolumn=120
 
 "** Status Information **"
 set laststatus=2 " Always show status line
