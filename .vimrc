@@ -18,6 +18,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " Installed bundles
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'timonv/vim-cargo'
 call neobundle#end()
 " If there are uninstalled bundles, prompt to install them.
 NeoBundleCheck
@@ -33,6 +35,10 @@ set iskeyword+=: " Set ':' to be a keyword for forgotten reasons
 " Stop inserting placeholders in my LaTeX files
 let g:Imap_UsePlaceHolders = 0
 let g:tex_flavor='latex'
+
+"** Rust **"
+let g:rustfmt_autosave = 1
+let g:rust_fold = 1
 
 "** File Formatting **"
 set ff=unix
@@ -53,7 +59,7 @@ vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>'
 set backspace=indent,eol,start
 set confirm
 set wildmenu wildmode=list:longest
-set colorcolumn=120
+set colorcolumn=100
 
 "** Status Information **"
 set laststatus=2 " Always show status line
